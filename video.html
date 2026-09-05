@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#BA4735">
+<title>就地 · 视频</title>
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body class="tool-video">
+<div class="app">
+  <a class="skip-link" href="#mainContent">跳到主要内容</a>
+  <nav class="shell-nav" aria-label="主要导航">
+    <a class="brand" href="index.html"><img src="favicon.png" width="24" height="24" alt="">就地</a>
+    <div class="nav-links">
+      <a href="image.html">图片</a>
+      <a href="pdf.html">PDF</a>
+      <a href="video.html">视频</a>
+    </div>
+    <span class="local-badge"><i aria-hidden="true"></i>本机处理</span>
+  </nav>
+
+  <main id="mainContent" class="tool-main">
+  <header class="tool-heading"><div><h1>视频</h1><p>选好一段，调整画面和体积后导出。</p></div><span class="shortcut-hint">⌘ / Ctrl O 打开文件</span></header>
+  <section id="empty" class="empty">
+    <div id="drop" class="drop" tabindex="0" role="button" aria-label="选择或拖入视频">
+      <input id="file" aria-label="选择视频文件" tabindex="-1" class="file-hidden" type="file" accept="video/*">
+      <svg class="drop-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="10" width="36" height="30" rx="6"/><path d="M16 24l8-8 8 8M24 16v17"/></svg>
+      <p class="dz-main">拖入视频</p>
+      <span class="choose-file">选择文件</span>
+      <p class="dz-hint">拉时间线裁一段</p>
+      <p class="dz-formats">MP4、MOV、WebM 等 · 播放支持取决于编码</p>
+      <p id="importStatus" class="import-status" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <div id="work" class="studio hidden">
+    <div class="stage-col">
+      <div class="stage">
+        <video id="player" class="preview" controls playsinline></video>
+      </div>
+      <div class="film" id="film" aria-label="裁剪时间线">
+        <div class="film-shots" id="filmShots"></div>
+        <div class="film-shade l" id="shadeL"></div>
+        <div class="film-shade r" id="shadeR"></div>
+        <div class="film-sel" id="filmSel"></div>
+        <div class="film-h" id="hStart"></div>
+        <div class="film-h" id="hEnd"></div>
+      </div>
+      <div class="times">
+        <span id="tStartLab">0:00</span>
+        <span id="tSpanLab">整段</span>
+        <span id="tEndLab">0:00</span>
+      </div>
+    </div>
+
+    <aside class="console" aria-label="视频处理设置">
+      <div class="file-head">
+        <div class="name" id="fileName">—</div>
+        <div class="meta" id="fileMeta"></div>
+      </div>
+
+      <div class="block">
+        <span class="lab">起点 / 终点</span>
+        <div class="row pair">
+          <div class="num-box">
+            <input aria-label="起点（秒）" id="tStart" type="number" min="0" step="0.1" value="0">
+            <span>起 · 秒</span>
+          </div>
+          <div class="num-box">
+            <input aria-label="终点（秒）" id="tEnd" type="number" min="0" step="0.1" value="0">
+            <span>止 · 秒</span>
+          </div>
+        </div>
+        <div class="text-row">
+          <button type="button" id="playSel">只播这段</button>
+          <button type="button" id="markIn">当前为起</button>
+          <button type="button" id="markOut">当前为止</button>
+        </div>
+      </div>
+
+      <div class="block">
+        <span class="lab">目标体积</span>
+        <div class="row">
+          <input aria-label="目标体积（MB）" id="mbRange" type="range" min="1" max="200" step="1" value="8">
+          <div class="num-box">
+            <input aria-label="目标体积（MB）" id="mbNum" type="number" min="1" max="200" value="8">
+            <span>MB</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <span class="lab">画面</span>
+        <div class="seg" id="resSeg">
+          <button type="button" data-res="src" class="on">原片</button>
+          <button type="button" data-res="1080">1080</button>
+          <button type="button" data-res="720">720</button>
+          <button type="button" data-res="480">480</button>
+        </div>
+      </div>
+
+      <div class="block">
+        <span class="lab">声音</span>
+        <div class="seg" id="audSeg">
+          <button type="button" data-aud="keep" class="on">保留</button>
+          <button type="button" data-aud="mute">去掉</button>
+        </div>
+      </div>
+
+      <div class="result" id="encBox"></div>
+      <div class="progress hidden"><i id="progressBar"></i></div>
+      <p id="status" class="status" aria-live="polite"></p>
+
+      <div class="actions">
+        <button type="button" id="run" class="btn-primary">处理并下载</button>
+        <button type="button" id="cancel" class="btn-ghost hidden">取消</button>
+        <button type="button" id="swap" class="btn-ghost">换一条</button>
+      </div>
+    </aside>
+  </div>
+  </main>
+</div>
+<script src="js/common.js"></script>
+<script src="js/video.js"></script>
+</body>
+</html>

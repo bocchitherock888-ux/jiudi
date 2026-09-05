@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#BA4735">
+<title>就地 · 图片</title>
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body class="tool-image">
+<div class="app">
+  <a class="skip-link" href="#mainContent">跳到主要内容</a>
+  <nav class="shell-nav" aria-label="主要导航">
+    <a class="brand" href="index.html"><img src="favicon.png" width="24" height="24" alt="">就地</a>
+    <div class="nav-links">
+      <a href="image.html">图片</a>
+      <a href="pdf.html">PDF</a>
+      <a href="video.html">视频</a>
+    </div>
+    <span class="local-badge"><i aria-hidden="true"></i>本机处理</span>
+  </nav>
+
+  <main id="mainContent" class="tool-main">
+  <header class="tool-heading"><div><h1>图片</h1><p>裁切与压缩，找到合适的画面和体积。</p></div><span class="shortcut-hint">⌘ / Ctrl O 打开文件</span></header>
+  <section id="empty" class="empty">
+    <div id="drop" class="drop" tabindex="0" role="button" aria-label="选择或拖入图片">
+      <input id="file" aria-label="选择图片文件" tabindex="-1" class="file-hidden" type="file" accept="image/*" multiple>
+      <svg class="drop-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="10" width="36" height="30" rx="6"/><path d="M16 24l8-8 8 8M24 16v17"/></svg>
+      <p class="dz-main">拖入图片</p>
+      <span class="choose-file">选择文件</span>
+      <p class="dz-hint">可多张，可粘贴</p>
+      <p class="dz-formats">JPG、PNG、WebP 等常见图片 · 支持批量与粘贴</p>
+      <p id="importStatus" class="import-status" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <div id="work" class="studio hidden">
+    <div class="stage-col">
+      <div class="stage" id="stage">
+        <div class="stage-tabs" id="stageTabs">
+          <button type="button" data-view="crop" class="on">裁切</button>
+          <button type="button" data-view="compare">对比</button>
+        </div>
+        <div id="cropView">
+          <div class="stage-inner" id="stageInner">
+            <canvas id="view"></canvas>
+            <div class="crop" id="cropEl" hidden>
+              <i data-handle="nw"></i><i data-handle="n"></i><i data-handle="ne"></i>
+              <i data-handle="w"></i><i data-handle="e"></i>
+              <i data-handle="sw"></i><i data-handle="s"></i><i data-handle="se"></i>
+            </div>
+          </div>
+        </div>
+        <div id="compareView" class="compare-view hidden">
+          <img id="cmpOrig" alt="原图">
+          <div class="cmp-top" id="cmpTop"><img id="cmpOut" alt="结果"></div>
+          <div class="cmp-bar" id="cmpBar"></div>
+          <span class="cmp-tag l">原</span>
+          <span class="cmp-tag r">压后</span>
+        </div>
+      </div>
+      <div id="batchStrip" class="batch-strip hidden"></div>
+    </div>
+
+    <aside class="console" aria-label="图片处理设置">
+      <div class="file-head">
+        <div class="name" id="fileName">—</div>
+        <div class="meta" id="fileMeta"></div>
+      </div>
+
+      <div class="block">
+        <span class="lab">取景</span>
+        <div class="chips" id="aspects"></div>
+      </div>
+
+      <div class="block">
+        <span class="lab">常用尺寸</span>
+        <div class="presets" id="presets"></div>
+      </div>
+
+      <div class="block limit-block">
+        <span class="lab">体积上限 <span class="unit-hint">1 KB = 1,000 字节</span></span>
+        <div class="row">
+          <input aria-label="体积上限（KB）" id="kbRange" type="range" min="10" max="4000" step="1" value="200">
+          <div class="num-box">
+            <input aria-label="体积上限（KB）" id="kbNum" type="number" min="10" max="4000" step="0.1" value="200" inputmode="decimal">
+            <span>KB</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <span class="lab">格式</span>
+        <div class="seg" id="fmtSeg">
+          <button type="button" data-fmt="jpeg" class="on">JPEG</button>
+          <button type="button" data-fmt="webp" id="webpBtn">WebP</button>
+          <button type="button" data-fmt="png">PNG</button>
+        </div>
+        <p class="warn-box" id="pngWarn">PNG 保留透明度；较小体积可选择 JPEG 或 WebP。</p>
+      </div>
+
+      <div class="block">
+        <span class="lab">输出像素</span>
+        <div class="dims">
+          <div class="num-box">
+            <input aria-label="输出宽度（像素）" id="wVal" type="number" min="1" max="8000" inputmode="numeric">
+            <span>宽</span>
+          </div>
+          <button type="button" class="link on" id="keepAsp" aria-pressed="true" title="锁定比例">比例</button>
+          <div class="num-box">
+            <input aria-label="输出高度（像素）" id="hVal" type="number" min="1" max="8000" inputmode="numeric">
+            <span>高</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="text-row">
+          <button type="button" id="rotL">左转</button>
+          <button type="button" id="rotR">右转</button>
+          <button type="button" id="flipH">水平翻</button>
+          <button type="button" id="flipV">垂直翻</button>
+        </div>
+      </div>
+
+      <div class="progress hidden"><i id="progressBar"></i></div>
+      <div class="result" id="resultBox" aria-label="实际导出结果" aria-live="polite"></div>
+      <p id="status" class="status" aria-live="polite"></p>
+
+      <div class="actions">
+        <a id="dl" class="btn btn-primary" href="#" download aria-disabled="true">下载这张</a>
+        <button type="button" id="dlAll" class="hidden">打包全部</button>
+        <button type="button" id="resetImage" class="btn-ghost">恢复原图</button>
+        <button type="button" id="swap" class="btn-ghost">换图</button>
+      </div>
+    </aside>
+  </div>
+  </main>
+</div>
+<script src="js/common.js"></script>
+<script src="js/image.js"></script>
+</body>
+</html>

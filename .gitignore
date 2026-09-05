@@ -1,0 +1,23 @@
+# Local builds and caches
+.DS_Store
+__pycache__/
+*.pyc
+*.app/
+output/
+releases/
+distribution/build-cache/
+distribution/toolchain/
+distribution/runtime/assets/
+distribution/runtime/runtime
+distribution/runtime/*.exe
+.jiudi-build.*/
+# Downloaded optional encoder core
+js/vendor/ffmpeg/ffmpeg-core.js
+js/vendor/ffmpeg/ffmpeg-core.wasm
+js/vendor/ffmpeg/*.part
+# Local agent and editor state
+.codex/
+.agents/
+.vscode/
+.env
+.env.*

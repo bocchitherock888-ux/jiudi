@@ -1,0 +1,6 @@
+* text=auto
+*.png binary
+js/vendor/** linguist-vendored=true
+Licenses/** linguist-documentation=true
+docs/** linguist-documentation=true
+distribution/runtime/assets/** linguist-generated=true

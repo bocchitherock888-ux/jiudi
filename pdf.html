@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#BA4735">
+<title>就地 · PDF</title>
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body class="tool-pdf">
+<div class="app">
+  <a class="skip-link" href="#mainContent">跳到主要内容</a>
+  <nav class="shell-nav" aria-label="主要导航">
+    <a class="brand" href="index.html"><img src="favicon.png" width="24" height="24" alt="">就地</a>
+    <div class="nav-links">
+      <a href="image.html">图片</a>
+      <a href="pdf.html">PDF</a>
+      <a href="video.html">视频</a>
+    </div>
+    <span class="local-badge"><i aria-hidden="true"></i>本机处理</span>
+  </nav>
+
+  <main id="mainContent" class="tool-main">
+  <header class="tool-heading"><div><h1>PDF</h1><p>选页、重排与合并，把文档整理好。</p></div><span class="shortcut-hint">⌘ / Ctrl O 打开文件</span></header>
+  <section id="empty" class="empty">
+    <div id="drop" class="drop" tabindex="0" role="button" aria-label="选择或拖入 PDF">
+      <input id="file" aria-label="选择PDF文件" tabindex="-1" class="file-hidden" type="file" accept="application/pdf,.pdf,image/*" multiple>
+      <svg class="drop-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="10" width="36" height="30" rx="6"/><path d="M16 24l8-8 8 8M24 16v17"/></svg>
+      <p class="dz-main">拖入 PDF</p>
+      <span class="choose-file">选择文件</span>
+      <p class="dz-hint">可多个，图片会收成页</p>
+      <p class="dz-formats">PDF 或图片 · 支持多文件合并</p>
+      <p id="importStatus" class="import-status" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <div id="work" class="studio hidden">
+    <div class="stage-col">
+      <div class="work-bar">
+        <div class="file-rail" id="fileRail"></div>
+        <div class="toolbar">
+          <span class="selcount" id="selCount">未选</span>
+          <button type="button" id="selAll">全选</button>
+          <button type="button" id="selNone">清除</button>
+          <span class="sp"></span>
+          <button type="button" id="rotL">左转</button>
+          <button type="button" id="rotR">右转</button>
+          <button type="button" id="delPages" class="btn-danger">删除</button>
+          <button type="button" id="extractSel">拆出</button>
+          <button type="button" id="exportImg">导出图</button>
+        </div>
+      </div>
+      <p class="workspace-hint">点选页面 · Shift 连选 · ⌘ / Ctrl 多选 · 拖动重排</p>
+      <div class="stage pdf-stage" id="pageStage">
+        <div class="pages" id="pages"></div>
+      </div>
+    </div>
+
+    <aside class="console" aria-label="PDF处理设置">
+      <div class="file-head">
+        <div class="name" id="fileName">—</div>
+        <div class="meta" id="fileMeta"></div>
+      </div>
+
+      <div class="block">
+        <span class="lab">按页导出</span>
+        <div class="range-row">
+          <label>从<input id="pgFrom" type="number" min="1" value="1" inputmode="numeric"></label>
+          <label>到<input id="pgTo" type="number" min="1" value="1" inputmode="numeric"></label>
+        </div>
+        <input aria-label="剔除页码，如 3 或 7-9" id="pgSkip" class="skip-in" type="text" placeholder="剔除页，如 3, 7" autocomplete="off">
+        <p class="note" id="rangeHint">将导出 — 页</p>
+        <span class="lab">清晰度</span>
+        <div class="seg" id="exDpi">
+          <button type="button" data-dpi="150">清晰</button>
+          <button type="button" data-dpi="200" class="on">高清</button>
+          <button type="button" data-dpi="300">印刷</button>
+        </div>
+        <div class="seg" id="exFmt">
+          <button type="button" data-ex="jpeg" class="on">JPEG</button>
+          <button type="button" data-ex="png">PNG</button>
+        </div>
+        <div class="text-row">
+          <button type="button" id="exPdf">导出 PDF</button>
+          <button type="button" id="exLong">长图</button>
+          <button type="button" id="exImgs">单张图</button>
+        </div>
+      </div>
+
+      <div class="block">
+        <span class="lab">压缩 PDF</span>
+        <div class="limit-block pdf-limit">
+          <label class="check-row"><input id="pdfLimitEnabled" type="checkbox">启用 PDF 体积上限</label>
+          <div class="num-box"><input id="pdfTargetKB" aria-label="PDF 体积上限（KB）" type="number" min="10" max="256000" step="0.1" value="2000" inputmode="decimal"><span>KB</span></div>
+          <p class="note">压缩与 PDF 下载均遵守上限。图片和 ZIP 按实际体积导出。</p>
+        </div>
+        <p class="note">默认保留文字与矢量内容，优化文件结构。</p>
+        <label class="check-row"><input id="rasterizePdf" type="checkbox">转为图片进一步压缩</label>
+        <p class="note">转为图片后，文字搜索、链接和表单会丢失。可撤销。</p>
+        <div class="row">
+          <input aria-label="图片压缩质量" id="jpgQ" type="range" min="1" max="100" step="1" value="100">
+          <div class="num-box">
+            <input aria-label="图片压缩质量" id="jpgQNum" type="number" min="1" max="100" value="100">
+            <span>质量上限</span>
+          </div>
+        </div>
+        <div class="seg" id="scaleSeg">
+          <button type="button" data-scale="1">1×</button>
+          <button type="button" data-scale="1.5" class="on">1.5×</button>
+          <button type="button" data-scale="2">2×</button>
+        </div>
+        <button type="button" id="compress" class="btn-ghost btn-block">压缩</button>
+      </div>
+
+      <div class="progress hidden"><i id="progressBar"></i></div>
+      <div id="exportResult" class="result" aria-live="polite"></div>
+      <p id="status" class="status" aria-live="polite"></p>
+
+      <div class="actions">
+        <button type="button" id="download" class="btn-primary">下载当前</button>
+        <button type="button" id="merge">合并全部并下载</button>
+        <button type="button" id="undo" class="btn-ghost">撤销</button>
+      </div>
+    </aside>
+  </div>
+  </main>
+</div>
+<script src="js/vendor/pdf-lib.min.js"></script>
+<script src="js/vendor/pdf.min.js"></script>
+<script src="js/vendor/jszip.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pdf.js"></script>
+</body>
+</html>

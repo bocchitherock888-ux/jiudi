@@ -1,0 +1,70 @@
+{
+  "index.html": {
+    "bytes": 2525,
+    "sha256": "8848455cfd89668ef14413c4d666154f22274dc4fbb8112b5faf7653b89aaeec"
+  },
+  "image.html": {
+    "bytes": 6273,
+    "sha256": "6e9e183796e308f23a97e85875144760c2c6e54587758b70bd8935f893c5f096"
+  },
+  "pdf.html": {
+    "bytes": 6638,
+    "sha256": "565d29c4034ec47badd1c1da426a3e30fc0f995164721ce03b6a7f7eac4c3497"
+  },
+  "video.html": {
+    "bytes": 5286,
+    "sha256": "133e54bc50215a73487aecc7652892054a4ca6b084f14c1332af3da7347e1c9f"
+  },
+  "css/app.css": {
+    "bytes": 34441,
+    "sha256": "e79f0aaf28a87216b1b7ae4b50599f4faf435be960412b55e8d10eed4e5916cf"
+  },
+  "favicon.png": {
+    "bytes": 45170,
+    "sha256": "8bb7032943b008674f8efd73fece1bf7b4dfa4ceb5370a6acc954899a7c68085"
+  },
+  "apple-touch-icon.png": {
+    "bytes": 25999,
+    "sha256": "a708344ccade9eb652597f502c809dd7bc6b338e7d0a1cab3aa85a2888b93977"
+  },
+  "js/common.js": {
+    "bytes": 9859,
+    "sha256": "e7823b61b957fe3326ce15fe1213f14a687ab74358c6fcfda7a761cd73df199d"
+  },
+  "js/image.js": {
+    "bytes": 38370,
+    "sha256": "4d799b0a87888555951b3c1fc956fbfd1a4783f9040f34a61e9a2531849c0c79"
+  },
+  "js/pdf.js": {
+    "bytes": 49669,
+    "sha256": "48a354ca25b82fd8510e131808d24171e45c302e076e9c3b0678a194e00551e2"
+  },
+  "js/video.js": {
+    "bytes": 26942,
+    "sha256": "b96efe208dfd722f1cbf907a55b3c604495476e7c89dfbc49b923a6f1b9398ca"
+  },
+  "js/vendor/pdf-lib.min.js": {
+    "bytes": 525099,
+    "sha256": "0f9a5cad07941f0826586c94e089d89b918c46e5c17cf2d5a3c6f666e3bc694f"
+  },
+  "js/vendor/pdf.min.js": {
+    "bytes": 320004,
+    "sha256": "5b5799e6f8c680663207ac5b42ee14eed2a406fa7af48f50c154f0c0b1566946"
+  },
+  "js/vendor/pdf.worker.min.js": {
+    "bytes": 1087212,
+    "sha256": "feabdf309770ed24bba31a5467836cdc8cf639c705af27d52b585b041bb8527b"
+  },
+  "js/vendor/jszip.min.js": {
+    "bytes": 97630,
+    "sha256": "acc7e41455a80765b5fd9c7ee1b8078a6d160bbbca455aeae854de65c947d59e"
+  },
+  "js/vendor/ffmpeg/ffmpeg.js": {
+    "bytes": 4126,
+    "sha256": "a4c09a1997ac582a735fc21e20f9913df4af6dde4ebb373f1d714a4b6e7616f1"
+  },
+  "js/vendor/ffmpeg/814.ffmpeg.js": {
+    "bytes": 2648,
+    "sha256": "c4702e2f749671b2f9cf07e4738abaf4511fc0d89525ad6a93bc3c2a8ad0822a"
+  }
+}
