@@ -14,9 +14,9 @@ Jiudi is a file tool for Mac and Windows. Use it when a photo exceeds an upload 
 
 | Platform | Download |
 |---|---|
-| macOS 13+, Apple silicon / Intel | [Mac Universal](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.1/Jiudi-1.1.1-Mac-Universal.zip) |
-| Windows 10/11, Intel / AMD | [Windows x64](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.1/Jiudi-1.1.1-Windows-x64.zip) |
-| Windows 10/11, ARM64 | [Windows ARM64](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.1/Jiudi-1.1.1-Windows-ARM64.zip) |
+| macOS 13+, Apple silicon / Intel | [Mac Universal](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.2/Jiudi-1.1.2-Mac-Universal.zip) |
+| Windows 10/11, Intel / AMD | [Windows x64](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.2/Jiudi-1.1.2-Windows-x64.zip) |
+| Windows 10/11, ARM64 | [Windows ARM64](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.2/Jiudi-1.1.2-Windows-ARM64.zip) |
 
 [Release notes and checksums](https://github.com/bocchitherock888-ux/jiudi/releases/latest)
 
@@ -50,6 +50,8 @@ python3 serve.py --open
 See the [development guide](docs/DEVELOPMENT.md) for the project structure, Go runtime, and Mac build instructions.
 
 ## Licence and feedback
+
+Created by **Tipram** (醉步羊).
 
 Original code is licensed under [MIT](LICENSE). See the [third-party notices](Licenses/THIRD-PARTY-NOTICES.md) for bundled components and FFmpeg licensing.
 

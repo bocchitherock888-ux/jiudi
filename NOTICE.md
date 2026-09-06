@@ -1,6 +1,6 @@
 # 许可范围
 
-就地（Jiudi）由 bocchitherock888-ux 提供的原创代码与文档采用 MIT License，全文见同目录的 LICENSE。可在保留版权声明与许可文本的条件下使用、复制、修改和分发；软件按许可中的原样条款提供。
+就地（Jiudi）由醉步羊（Tipram）提供的原创代码与文档采用 MIT License，全文见同目录的 LICENSE。可在保留版权声明与许可文本的条件下使用、复制、修改和分发；软件按许可中的原样条款提供。
 
 第三方组件保留各自的版权及许可。pdf-lib、JSZip（选择 MIT 许可）和 ffmpeg.wasm JavaScript API 等使用 MIT；PDF.js 和 tslib 使用 Apache-2.0；Go 运行时使用 Go 随附的 BSD 许可及专利授权。完整清单、版本、来源及许可文本见 Licenses/THIRD-PARTY-NOTICES.md；Mac 包内路径为 就地.app/Contents/Resources/Licenses/THIRD-PARTY-NOTICES.md。
 

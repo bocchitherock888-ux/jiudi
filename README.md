@@ -14,9 +14,9 @@
 
 | 系统 | 安装包 |
 |---|---|
-| macOS 13+，Apple 芯片 / Intel | [Mac Universal](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.1/Jiudi-1.1.1-Mac-Universal.zip) |
-| Windows 10/11，Intel / AMD | [Windows x64](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.1/Jiudi-1.1.1-Windows-x64.zip) |
-| Windows 10/11，ARM64 | [Windows ARM64](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.1/Jiudi-1.1.1-Windows-ARM64.zip) |
+| macOS 13+，Apple 芯片 / Intel | [Mac Universal](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.2/Jiudi-1.1.2-Mac-Universal.zip) |
+| Windows 10/11，Intel / AMD | [Windows x64](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.2/Jiudi-1.1.2-Windows-x64.zip) |
+| Windows 10/11，ARM64 | [Windows ARM64](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.2/Jiudi-1.1.2-Windows-ARM64.zip) |
 
 [更新记录与校验文件](https://github.com/bocchitherock888-ux/jiudi/releases/latest)
 
@@ -50,6 +50,8 @@ python3 serve.py --open
 项目结构、Go 运行时和 Mac 构建方式见 [开发说明](docs/DEVELOPMENT.md)。
 
 ## 许可与反馈
+
+作者：**醉步羊**（Tipram）。
 
 原创代码采用 [MIT](LICENSE)。第三方组件及 FFmpeg 的许可见 [许可清单](Licenses/THIRD-PARTY-NOTICES.md)。
 
