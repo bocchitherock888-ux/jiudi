@@ -21,3 +21,5 @@ js/vendor/ffmpeg/*.part
 .vscode/
 .env
 .env.*
+
+docs/VERIFICATION-*.md

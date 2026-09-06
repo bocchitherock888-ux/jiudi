@@ -4,7 +4,9 @@
 
 # Jiudi · 就地
 
-Crop and compress images, organise PDFs, and trim video. Files are processed on your computer and results are saved separately.
+**Smaller photos, organised PDFs, shorter videos.**
+
+Jiudi is a file tool for Mac and Windows. Use it when a photo exceeds an upload limit, a PDF has pages you do not need, or you only want part of a video. Your files are processed on your computer and the results are saved as new files.
 
 ![Jiudi home](docs/images/home.jpg)
 
@@ -24,8 +26,8 @@ The Mac app uses an ad-hoc signature and has not been notarised. Windows builds 
 
 ## Features
 
-- **Images:** crop, rotate, convert, compress to a size cap, and export batches.
-- **PDFs:** select and reorder pages, merge, compress, and export PDFs or images.
+- **Images:** crop a photo, reduce it to a website’s upload limit, or process several images together.
+- **PDFs:** remove or reorder pages, combine documents, or save pages as images.
 - **Video:** trim clips and adjust resolution, audio, and target size.
 
 Image and PDF tools work offline. Video tools download an encoder of about 32 MB on first use, then reuse the local cache. The app interface is in Chinese.

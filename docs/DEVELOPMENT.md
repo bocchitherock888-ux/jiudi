@@ -63,12 +63,6 @@ CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -trimpath -o Jiudi.exe .
 | `Licenses/` | 第三方许可、版本和来源 / Third-party licenses and provenance |
 | `docs/images/` | 真实界面截图，使用程序生成素材 / Real screenshots with generated samples |
 
-## 语言统计 / Language statistics
-
-GitHub 根据仓库实际源码生成语言比例。`.gitattributes` 将第三方库标为 vendored，将截图、许可及文档排除出代码统计，生成的嵌入资源通过 `.gitignore` 排除。
-
-GitHub computes language proportions from the source. `.gitattributes` marks third-party libraries as vendored and documentation as documentation; generated embedded copies are gitignored.
-
 ## 反馈 / Contributing
 
 欢迎提交 Issue 或 Pull Request。涉及媒体处理时，请使用自行生成或获得授权的样例，附上系统、复现步骤、预期结果与实际结果。修改第三方依赖时，一并更新校验值、版本及许可记录。
