@@ -12,9 +12,13 @@
 
 **Smaller photos, organised PDFs, shorter videos.**
 
-Jiudi is a file tool for Mac and Windows. A registration website might require a photo smaller than 200 KB while yours is several MB. You might need three pages from a long PDF, or thirty seconds from a longer video. Drag the file into Jiudi, adjust it, and save the result.
+Jiudi is a file tool for Mac and Windows. Crop and compress images, split and merge PDFs, or trim and compress videos. Drag a file into its workspace, make your adjustments, and save the result.
 
-Images, PDFs, and videos each have their own workspace. Files are processed on your computer, and results are saved as new files. Your original files stay in place. The app interface is in Chinese; the instructions below include the labels to look for.
+Use it to fit a registration photo within a 200 KB limit, take a few pages from a long PDF, or keep thirty seconds from a longer video.
+
+Files are processed on your computer, and results are saved as new files. Your original files stay in place. The app interface is in Chinese; the instructions below include the labels to look for.
+
+[Download](#download-and-open) · [How to use](#how-to-use) · [Report an issue](https://github.com/bocchitherock888-ux/jiudi/issues/new)
 
 ![Jiudi home, with image, PDF, and video tools](docs/images/home.jpg)
 
@@ -34,9 +38,11 @@ Choose the package for your computer:
 
 Your system may show a developer verification message on first launch. The Mac app has not been notarised, and the Windows builds are unsigned. Testing on Windows hardware is still pending.
 
-[Other versions and release notes](https://github.com/bocchitherock888-ux/jiudi/releases/latest)
+[All versions and release notes](https://github.com/bocchitherock888-ux/jiudi/releases)
 
-## Images: crop a photo and reduce its size
+## How to use
+
+### Images: crop and compress
 
 Choose **图片** on the home page. Drag in a JPG, PNG, WebP, or another supported image, or click **选择文件** to select one. Set the crop, output dimensions, and format. The right panel shows the resulting file size.
 
@@ -44,7 +50,7 @@ For a website that requires a photo under 200 KB, set **体积上限** to `200`.
 
 You can also rotate or flip images, use common ID-photo dimensions, and import several images for batch processing and download.
 
-## PDFs: keep the pages you need
+### PDFs: extract pages and merge files
 
 Choose **PDF** and add a document. Each page appears as a thumbnail. Select unwanted pages to delete them, or drag pages to change their order.
 
@@ -59,11 +65,13 @@ Pages can be saved as images, and PDF files can be compressed. The **转为图�
   </tr>
 </table>
 
-## Videos: keep a clip, shrink the file, or remove sound
+### Videos: trim, compress, and mute
 
 Choose **视频** and add an MP4, MOV, WebM, or another supported video. Set the start and end times, adjust the picture dimensions, audio, and target size as needed, then click **处理并下载**.
 
 To keep the segment from 10 to 40 seconds, enter `10` for the start and `40` for the end. Save the downloaded clip when processing finishes.
+
+## Offline use
 
 Image and PDF tools come with the package and work offline. Video tools download a processing component of about 32 MB on first use, then reuse the copy cached on your computer.
 
