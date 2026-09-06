@@ -22,9 +22,9 @@ Image and PDF libraries are included. On first video use, the development server
 
 ## Go 独立服务 / Standalone Go server
 
-Go 模块要求 Go 1.24+；v1.1.0 分发包使用 Go 1.27.1 构建。Go 服务将界面资源嵌入可执行文件，运行时无需 Python。
+Go 模块要求 Go 1.24+；v1.1.1 分发包使用 Go 1.27.1 构建。Go 服务将界面资源嵌入可执行文件，运行时无需 Python。
 
-The module requires Go 1.24+; the v1.1.0 binaries were built with Go 1.27.1. The Go server embeds the frontend and runs without Python.
+The module requires Go 1.24+; the v1.1.1 binaries were built with Go 1.27.1. The Go server embeds the frontend and runs without Python.
 
 ```sh
 python3 tools/prepare_runtime.py

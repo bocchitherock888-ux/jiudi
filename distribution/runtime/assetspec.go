@@ -17,10 +17,10 @@ type assetSpec struct {
 }
 
 var embeddedAssetSpecs = map[string]assetSpec{
-	"index.html":                     pinnedSpec("text/html; charset=utf-8", "8848455cfd89668ef14413c4d666154f22274dc4fbb8112b5faf7653b89aaeec"),
-	"image.html":                     pinnedSpec("text/html; charset=utf-8", "6e9e183796e308f23a97e85875144760c2c6e54587758b70bd8935f893c5f096"),
-	"pdf.html":                       pinnedSpec("text/html; charset=utf-8", "565d29c4034ec47badd1c1da426a3e30fc0f995164721ce03b6a7f7eac4c3497"),
-	"video.html":                     pinnedSpec("text/html; charset=utf-8", "133e54bc50215a73487aecc7652892054a4ca6b084f14c1332af3da7347e1c9f"),
+	"index.html":                     pinnedSpec("text/html; charset=utf-8", "fe21a5ef5563fac10592578b83e056e23892f2bc0c4842e743985dec7883bd45"),
+	"image.html":                     pinnedSpec("text/html; charset=utf-8", "558e7e3e2ba7eb34341a5a612fd520d26dbd0cb3df09c97e99d5a09291b79048"),
+	"pdf.html":                       pinnedSpec("text/html; charset=utf-8", "3beec38755babd0d9045fce1c9d63e913621543fa18f513c5ecc48d2e51aebfa"),
+	"video.html":                     pinnedSpec("text/html; charset=utf-8", "71b0e090b99573e3093c0fac3a01b070c2927f384ab62814080794ef88b71f96"),
 	"favicon.png":                    pinnedSpec("image/png", "8bb7032943b008674f8efd73fece1bf7b4dfa4ceb5370a6acc954899a7c68085"),
 	"apple-touch-icon.png":           pinnedSpec("image/png", "a708344ccade9eb652597f502c809dd7bc6b338e7d0a1cab3aa85a2888b93977"),
 	"css/app.css":                    pinnedSpec("text/css; charset=utf-8", "e79f0aaf28a87216b1b7ae4b50599f4faf435be960412b55e8d10eed4e5916cf"),

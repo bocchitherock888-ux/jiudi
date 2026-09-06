@@ -1,80 +1,54 @@
 <div align="right"><a href="README.md">中文</a></div>
 
-<div align="center">
-  <img src="apple-touch-icon.png" width="88" height="88" alt="Jiudi icon">
-  <h1>Jiudi · 就地</h1>
-  <p>Handle images, PDFs, and video locally. Save every result as a new file.</p>
+<img src="apple-touch-icon.png" width="72" height="72" alt="Jiudi icon">
 
-  [![Latest release](https://img.shields.io/github/v/release/bocchitherock888-ux/jiudi?label=release&color=3b7457)](https://github.com/bocchitherock888-ux/jiudi/releases/latest)
-  [![MIT License](https://img.shields.io/github/license/bocchitherock888-ux/jiudi?color=3b7457)](LICENSE)
-  [![Total downloads](https://img.shields.io/github/downloads/bocchitherock888-ux/jiudi/total?label=downloads&color=3b7457)](https://github.com/bocchitherock888-ux/jiudi/releases)
-  ![macOS 13+](https://img.shields.io/badge/macOS-13%2B-555555?logo=apple)
-  ![Windows 10/11](https://img.shields.io/badge/Windows-10%20%2F%2011-555555?logo=windows11)
-</div>
+# Jiudi · 就地
 
-![Jiudi home screen](docs/images/home.jpg)
+Crop and compress images, organise PDFs, and trim video. Files are processed on your computer and results are saved separately.
 
-Jiudi is a lightweight desktop utility for everyday media work. It processes files on your computer, keeps the originals, and saves results separately. Everything required for image and PDF tasks is bundled, so those tools also work offline. The current app interface is in Chinese, while the project documentation is available in Chinese and English.
+![Jiudi home](docs/images/home.jpg)
 
 ## Download
 
-The current release is **v1.1.0**. Desktop builds run without a Python installation.
+| Platform | Download |
+|---|---|
+| macOS 13+, Apple silicon / Intel | [Mac Universal](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.1/Jiudi-1.1.1-Mac-Universal.zip) |
+| Windows 10/11, Intel / AMD | [Windows x64](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.1/Jiudi-1.1.1-Windows-x64.zip) |
+| Windows 10/11, ARM64 | [Windows ARM64](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.1/Jiudi-1.1.1-Windows-ARM64.zip) |
 
-| Platform | Download | Size | Compatibility |
-|---|---|---:|---|
-| macOS | [Jiudi-1.1.0-Mac-Universal.zip](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.0/Jiudi-1.1.0-Mac-Universal.zip) | 8.6 MB | macOS 13+, Apple silicon / Intel |
-| Windows x64 | [Jiudi-1.1.0-Windows-x64.zip](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.0/Jiudi-1.1.0-Windows-x64.zip) | 3.9 MB | Windows 10/11, Intel / AMD |
-| Windows ARM64 | [Jiudi-1.1.0-Windows-ARM64.zip](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.0/Jiudi-1.1.0-Windows-ARM64.zip) | 3.6 MB | Windows 10/11, ARM64 |
+[Release notes and checksums](https://github.com/bocchitherock888-ux/jiudi/releases/latest)
 
-Release checksums are available in [SHA256SUMS.txt](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.0/SHA256SUMS.txt).
+**Mac:** Unzip and open “就地.app”. **Windows:** Extract the archive and run `Jiudi.exe`. The interface opens in your browser; press Enter in the program window to quit.
 
-## What you can do
+The Mac app uses an ad-hoc signature and has not been notarised. Windows builds are unsigned. Your system may show a confirmation on first launch. Windows packages have passed cross-compilation and integrity checks; testing on Windows hardware is pending.
 
-- **Images:** crop, rotate, convert formats, compress to a size cap, and bundle multiple results.
-- **PDFs:** select and reorder pages, merge and compress documents, or export a PDF or images. Default compression preserves text and vector content.
-- **Video:** trim a segment and adjust resolution, audio, and target size.
+## Features
 
-Image size caps and the optional PDF cap apply to the final output byte count, using `1 KB = 1000 bytes`. Jiudi seeks the highest practical quality within that cap. The achievable result depends on the content, and information-dense files may exceed very small targets.
+- **Images:** crop, rotate, convert, compress to a size cap, and export batches.
+- **PDFs:** select and reorder pages, merge, compress, and export PDFs or images.
+- **Video:** trim clips and adjust resolution, audio, and target size.
 
-On first use, video tools download about 32 MB of a pinned upstream FFmpeg core. Jiudi verifies its integrity and caches it for later use.
+Image and PDF tools work offline. Video tools download an encoder of about 32 MB on first use, then reuse the local cache. The app interface is in Chinese.
 
 <table>
   <tr>
     <td width="50%"><a href="docs/images/image.jpg"><img src="docs/images/image.jpg" alt="Image tools"></a></td>
     <td width="50%"><a href="docs/images/pdf.jpg"><img src="docs/images/pdf.jpg" alt="PDF tools"></a></td>
   </tr>
-  <tr><td align="center">Image tools</td><td align="center">PDF tools</td></tr>
 </table>
 
-All sample media shown here was generated programmatically. The screenshots contain no personal photos or private files.
+## Development
 
-## Getting started
+With Python 3.10+, run from the repository root:
 
-**Mac:** Download and unpack the Universal build, then move “就地.app” to a convenient location and open it. The app has an ad-hoc signature and has not been notarized by Apple. On first launch, follow the developer-confirmation steps provided by macOS.
-
-**Windows:** Download the archive for your CPU and extract it completely. Run the included `.exe`; Jiudi opens its interface in your default browser. Return to the program window and press Enter to quit. The Windows builds are unsigned, so Windows may show a security confirmation on first launch.
-
-The Mac build has been tested for standalone launch, navigation, exit cleanup, and JPEG, PDF, ZIP, and MP4 flows using generated media. Windows builds have passed cross-compilation, architecture, and package-integrity checks. They have not yet been tested on physical Windows devices.
-
-## Source and development
-
-The repository includes the HTML/CSS/JavaScript frontend, standalone Go runtime, Swift Mac shell, and Python development server and runtime-preparation helper. Start a local preview with Python 3.10 or later:
-
-```bash
+```sh
 python3 serve.py --open
 ```
 
-See the [development guide](docs/DEVELOPMENT.md) for Go build instructions and the project layout.
+See the [development guide](docs/DEVELOPMENT.md) for the project structure, Go runtime, and Mac build instructions.
 
-<p>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=111" alt="JavaScript">
-  <img src="https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=white" alt="Go">
-  <img src="https://img.shields.io/badge/Swift-F05138?logo=swift&logoColor=white" alt="Swift">
-  <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" alt="Python">
-</p>
+## Licence and feedback
 
-## Licensing and feedback
+Original code is licensed under [MIT](LICENSE). See the [third-party notices](Licenses/THIRD-PARTY-NOTICES.md) for bundled components and FFmpeg licensing.
 
-Jiudi's original code and documentation are available under the [MIT License](LICENSE), with copyright held by bocchitherock888-ux. [NOTICE.md](NOTICE.md) explains the license scope. Third-party components retain their own licenses; versions, sources, and license texts are listed in the [third-party notices](Licenses/THIRD-PARTY-NOTICES.md). The FFmpeg core downloaded for video work contains GPL components and remains subject to its upstream license.
-
-To report a problem, [open an issue](https://github.com/bocchitherock888-ux/jiudi/issues/new) with your operating-system version, CPU architecture, and reproduction steps. Personal files are unnecessary.
+[Report an issue](https://github.com/bocchitherock888-ux/jiudi/issues/new) with your OS version and steps to reproduce it.
