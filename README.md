@@ -4,6 +4,12 @@
 
 # 就地 Jiudi
 
+[![最新版本](https://img.shields.io/github/v/release/bocchitherock888-ux/jiudi?label=release&color=3b7457)](https://github.com/bocchitherock888-ux/jiudi/releases/latest)
+[![MIT License](https://img.shields.io/github/license/bocchitherock888-ux/jiudi?color=3b7457)](LICENSE)
+[![下载量](https://img.shields.io/github/downloads/bocchitherock888-ux/jiudi/total?label=downloads&color=3b7457)](https://github.com/bocchitherock888-ux/jiudi/releases)
+![macOS 13+](https://img.shields.io/badge/macOS-13%2B-555555?logo=apple)
+![Windows 10/11](https://img.shields.io/badge/Windows-10%20%2F%2011-555555?logo=windows11)
+
 **把照片压小、把 PDF 整理好、把视频剪短。**
 
 就地是一款在 Mac 和 Windows 电脑上使用的文件处理工具。比如报名网站要求照片小于 200 KB，你手上的照片有几 MB；一份 PDF 有几十页，你只想交其中几页；一段视频有几分钟，你只需要中间的几十秒。这些情况都可以把文件拖进就地，调整后下载结果。

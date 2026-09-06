@@ -4,6 +4,12 @@
 
 # Jiudi · 就地
 
+[![Latest release](https://img.shields.io/github/v/release/bocchitherock888-ux/jiudi?label=release&color=3b7457)](https://github.com/bocchitherock888-ux/jiudi/releases/latest)
+[![MIT License](https://img.shields.io/github/license/bocchitherock888-ux/jiudi?color=3b7457)](LICENSE)
+[![Downloads](https://img.shields.io/github/downloads/bocchitherock888-ux/jiudi/total?label=downloads&color=3b7457)](https://github.com/bocchitherock888-ux/jiudi/releases)
+![macOS 13+](https://img.shields.io/badge/macOS-13%2B-555555?logo=apple)
+![Windows 10/11](https://img.shields.io/badge/Windows-10%20%2F%2011-555555?logo=windows11)
+
 **Smaller photos, organised PDFs, shorter videos.**
 
 Jiudi is a file tool for Mac and Windows. A registration website might require a photo smaller than 200 KB while yours is several MB. You might need three pages from a long PDF, or thirty seconds from a longer video. Drag the file into Jiudi, adjust it, and save the result.
