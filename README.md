@@ -18,7 +18,7 @@
 | Windows 10/11，Intel / AMD | [Windows x64](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.2/Jiudi-1.1.2-Windows-x64.zip) |
 | Windows 10/11，ARM64 | [Windows ARM64](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.2/Jiudi-1.1.2-Windows-ARM64.zip) |
 
-[更新记录与校验文件](https://github.com/bocchitherock888-ux/jiudi/releases/latest)
+[更新记录](https://github.com/bocchitherock888-ux/jiudi/releases/latest)
 
 **Mac：** 解压后打开「就地.app」。**Windows：** 完整解压后运行 `Jiudi.exe`，界面会在浏览器中打开；回到程序窗口按 Enter 退出。
 

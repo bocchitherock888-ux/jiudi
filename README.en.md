@@ -18,7 +18,7 @@ Jiudi is a file tool for Mac and Windows. Use it when a photo exceeds an upload 
 | Windows 10/11, Intel / AMD | [Windows x64](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.2/Jiudi-1.1.2-Windows-x64.zip) |
 | Windows 10/11, ARM64 | [Windows ARM64](https://github.com/bocchitherock888-ux/jiudi/releases/download/v1.1.2/Jiudi-1.1.2-Windows-ARM64.zip) |
 
-[Release notes and checksums](https://github.com/bocchitherock888-ux/jiudi/releases/latest)
+[Release notes](https://github.com/bocchitherock888-ux/jiudi/releases/latest)
 
 **Mac:** Unzip and open “就地.app”. **Windows:** Extract the archive and run `Jiudi.exe`. The interface opens in your browser; press Enter in the program window to quit.
 

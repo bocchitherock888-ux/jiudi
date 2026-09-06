@@ -16,9 +16,9 @@ Windows 也可以使用 `py -3 serve.py --open`。服务只监听本机地址，
 
 On Windows, use `py -3 serve.py --open`. The server binds to loopback and supplies the isolation headers needed by the video engine. It prints the local URL; press Ctrl+C to stop it. Refresh the browser after editing the frontend.
 
-图片和 PDF 所需的库已经随源码附带。视频核心在首次使用时从固定的上游地址下载，按 SHA-256 校验。源码模式将这些依赖缓存在 `js/vendor/ffmpeg/`，相关文件已在 `.gitignore` 中排除。
+图片和 PDF 所需的库已经随源码附带。视频核心在首次使用时下载。源码模式将这些依赖缓存在 `js/vendor/ffmpeg/`，相关文件已在 `.gitignore` 中排除。
 
-Image and PDF libraries are included. On first video use, the development server downloads pinned upstream encoder files and verifies their SHA-256 hashes. Source mode caches them under `js/vendor/ffmpeg/`; those downloaded files are gitignored.
+Image and PDF libraries are included. On first video use, the development server downloads the encoder files. Source mode caches them under `js/vendor/ffmpeg/`; those downloaded files are gitignored.
 
 ## Go 独立服务 / Standalone Go server
 
